@@ -272,7 +272,7 @@
         <module name="edu.tec.ic6821.checks.StructureCheck">
             <property name="name" value="UserRowMapper"/>
             <property name="abstractionType" value="class"/>
-            <property name="packageName" value="model"/>
+            <property name="packageName" value="users"/>
             <property name="implementsInterfaces" value="RowMapper"/>
             <property name="publicMethods" value="mapRow(:ResultSet;:int):User"/>
         </module>
@@ -290,7 +290,7 @@
         <module name="edu.tec.ic6821.checks.StructureCheck">
             <property name="name" value="PostRowMapper"/>
             <property name="abstractionType" value="class"/>
-            <property name="packageName" value="model"/>
+            <property name="packageName" value="posts"/>
             <property name="implementsInterfaces" value="RowMapper"/>
             <property name="publicMethods" value="mapRow(:ResultSet;:int):Post"/>
         </module>

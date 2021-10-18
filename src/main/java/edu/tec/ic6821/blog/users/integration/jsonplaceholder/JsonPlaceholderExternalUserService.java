@@ -3,7 +3,7 @@ package edu.tec.ic6821.blog.users.integration.jsonplaceholder;
 import edu.tec.ic6821.blog.framework.BeanMapper;
 import edu.tec.ic6821.blog.users.integration.ExternalUserDTO;
 import edu.tec.ic6821.blog.users.integration.ExternalUserService;
-import edu.tec.ic6821.blog.users.model.User;
+import edu.tec.ic6821.blog.model.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;

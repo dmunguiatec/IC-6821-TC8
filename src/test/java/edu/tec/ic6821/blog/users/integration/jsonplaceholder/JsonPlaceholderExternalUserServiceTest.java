@@ -6,7 +6,7 @@ import edu.tec.ic6821.blog.users.integration.ExternalUserCompanyDTO;
 import edu.tec.ic6821.blog.users.integration.ExternalUserDTO;
 import edu.tec.ic6821.blog.users.integration.ExternalUserGeoDTO;
 import edu.tec.ic6821.blog.users.integration.ExternalUserService;
-import edu.tec.ic6821.blog.users.model.User;
+import edu.tec.ic6821.blog.model.users.User;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;

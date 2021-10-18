@@ -22,7 +22,7 @@ package edu.tec.ic6821.blog {
         }
     }
 
-    package posts.model {
+    package model.posts {
         class Post {
             - integrationId: Long
             - userIntegrationId: Long

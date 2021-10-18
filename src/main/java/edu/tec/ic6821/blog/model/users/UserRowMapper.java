@@ -1,4 +1,4 @@
-package edu.tec.ic6821.blog.users.model;
+package edu.tec.ic6821.blog.model.users;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;

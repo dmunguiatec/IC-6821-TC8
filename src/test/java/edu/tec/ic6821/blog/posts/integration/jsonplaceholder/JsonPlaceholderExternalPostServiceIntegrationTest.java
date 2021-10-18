@@ -1,9 +1,7 @@
 package edu.tec.ic6821.blog.posts.integration.jsonplaceholder;
 
 import edu.tec.ic6821.blog.posts.integration.ExternalPostService;
-import edu.tec.ic6821.blog.posts.model.Post;
-import edu.tec.ic6821.blog.users.integration.ExternalUserService;
-import edu.tec.ic6821.blog.users.model.User;
+import edu.tec.ic6821.blog.model.posts.Post;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

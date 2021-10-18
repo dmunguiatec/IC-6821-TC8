@@ -2,7 +2,7 @@ package edu.tec.ic6821.blog.posts;
 
 import edu.tec.ic6821.blog.posts.integration.ExternalPostDTO;
 import edu.tec.ic6821.blog.posts.integration.ExternalPostMapper;
-import edu.tec.ic6821.blog.posts.model.Post;
+import edu.tec.ic6821.blog.model.posts.Post;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

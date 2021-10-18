@@ -1,4 +1,4 @@
-package edu.tec.ic6821.blog.users.model;
+package edu.tec.ic6821.blog.model.users;
 
 import java.util.List;
 import java.util.Optional;

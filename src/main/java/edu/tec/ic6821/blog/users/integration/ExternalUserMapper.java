@@ -1,7 +1,7 @@
 package edu.tec.ic6821.blog.users.integration;
 
 import edu.tec.ic6821.blog.framework.BeanMapper;
-import edu.tec.ic6821.blog.users.model.User;
+import edu.tec.ic6821.blog.model.users.User;
 import org.springframework.stereotype.Component;
 
 @Component

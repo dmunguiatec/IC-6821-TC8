@@ -1,8 +1,8 @@
-package edu.tec.ic6821.blog.users.model.hsqldb;
+package edu.tec.ic6821.blog.model.users.hsqldb;
 
-import edu.tec.ic6821.blog.users.model.User;
-import edu.tec.ic6821.blog.users.model.UserDao;
-import edu.tec.ic6821.blog.users.model.UserRowMapper;
+import edu.tec.ic6821.blog.model.users.User;
+import edu.tec.ic6821.blog.model.users.UserDao;
+import edu.tec.ic6821.blog.model.users.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;

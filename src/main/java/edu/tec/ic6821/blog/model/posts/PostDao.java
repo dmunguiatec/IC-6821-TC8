@@ -1,4 +1,4 @@
-package edu.tec.ic6821.blog.posts.model;
+package edu.tec.ic6821.blog.model.posts;
 
 import java.util.List;
 import java.util.Optional;

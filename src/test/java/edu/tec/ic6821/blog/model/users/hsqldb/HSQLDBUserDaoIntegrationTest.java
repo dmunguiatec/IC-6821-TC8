@@ -1,7 +1,7 @@
-package edu.tec.ic6821.blog.users.model.hsqldb;
+package edu.tec.ic6821.blog.model.users.hsqldb;
 
-import edu.tec.ic6821.blog.users.model.User;
-import edu.tec.ic6821.blog.users.model.UserDao;
+import edu.tec.ic6821.blog.model.users.User;
+import edu.tec.ic6821.blog.model.users.UserDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

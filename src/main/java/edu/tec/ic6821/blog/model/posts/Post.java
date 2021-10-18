@@ -1,4 +1,4 @@
-package edu.tec.ic6821.blog.posts.model;
+package edu.tec.ic6821.blog.model.posts;
 
 import edu.tec.ic6821.blog.framework.BaseEntity;
 
