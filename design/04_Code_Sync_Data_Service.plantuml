@@ -1,0 +1,119 @@
+@startuml
+
+title [Code] Sync Data Service Component
+
+package edu.tec.ic6821.blog {
+    package framework {
+        interface BeanMapper<To, From> {
+            map(:From): To
+        }
+    }
+
+    package posts.integration {
+        class ExternalPostDTO <<DTO>> {
+            - userId: Long
+            - id: Long
+            - title: String
+            - body: String
+        }
+
+        class ExternalPostMapper {
+            + map(:ExternalPostDTO): Post
+        }
+
+        ExternalPostMapper ..|> BeanMapper :<<bind>>\nFrom: ExternalPostDTO\nTo: Post
+
+        interface ExternalPostService {
+            + pull(): List<Post>
+        }
+
+        package posts.integration.jsonplaceholder {
+            class JsonPlaceholderExternalPostService {}
+        }
+
+        JsonPlaceholderExternalPostService ..|> ExternalPostService
+        JsonPlaceholderExternalPostService ..> ExternalPostDTO
+        JsonPlaceholderExternalPostService --> ExternalPostMapper
+    }
+
+    package posts.model {
+        class Post {
+            - integrationId: Long
+            - userIntegrationId: Long
+            - title: String
+            - body: String
+        }
+    }
+
+    ExternalPostService ..> Post
+    ExternalPostMapper ..> Post
+
+    package users.model {
+        class User {
+            - integrationId: Long
+            - username: String
+            - name: String
+            - email: String
+            - zipCode: String
+        }
+    }
+
+    package users.integration {
+        interface ExternalUserService {
+            pull(): List<User>
+        }
+
+        package users.integration.jsonplaceholder {
+            class JsonPlaceholderExternalUserService {
+            }
+        }
+
+        JsonPlaceholderExternalUserService ..|> ExternalUserService
+        ExternalUserService ..> User
+
+        class ExternalUserDTO <<DTO>> {
+            - id: Long
+            - name: String
+            - username: String
+            - email: String
+            - phone: String
+            - website: String
+        }
+
+        class ExternalUserAddressDTO <<DTO>> {
+            - street: String
+            - suite: String
+            - city: String
+            - zipcode: String
+        }
+
+        ExternalUserDTO --> ExternalUserAddressDTO
+
+        class ExternalUserGeoDTO <<DTO>> {
+            - lat: String
+            - lng: String
+        }
+
+        ExternalUserGeoDTO <-- ExternalUserAddressDTO
+
+        class ExternalUserCompanyDTO <<DTO>> {
+            - name: String
+            - catchPhrase: String
+            - bs: String
+        }
+
+        ExternalUserDTO --> ExternalUserCompanyDTO
+
+        JsonPlaceholderExternalUserService ..> ExternalUserDTO
+
+        class ExternalUserMapper {
+            + map(:ExternalUserDTO): User
+        }
+
+        ExternalUserMapper ..|> BeanMapper :<<bind>>\nFrom: ExternalUserDTO\nTo: User
+        JsonPlaceholderExternalUserService --> ExternalUserMapper
+    }
+
+}
+
+@enduml

@@ -1,0 +1,13 @@
+package edu.tec.ic6821.blog.posts.model;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface PostDao {
+    Post create(Post post);
+    int create(List<Post> posts);
+    Optional<Post> findById(Long id);
+    Optional<Post> findByExtId(String extId);
+    List<Post> getAll();
+    List<Post> findByUserId(Long userId);
+}
