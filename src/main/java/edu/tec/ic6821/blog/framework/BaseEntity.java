@@ -43,9 +43,7 @@ public abstract class BaseEntity {
         }
         final BaseEntity that = (BaseEntity) o;
         return Objects.equals(id, that.id)
-            && Objects.equals(extId, that.extId)
-            && Objects.equals(createdOn, that.createdOn)
-            && Objects.equals(lastUpdatedOn, that.lastUpdatedOn);
+            && Objects.equals(extId, that.extId);
     }
 
     /**
@@ -56,6 +54,6 @@ public abstract class BaseEntity {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(id, extId, createdOn, lastUpdatedOn);
+        return Objects.hash(id, extId);
     }
 }

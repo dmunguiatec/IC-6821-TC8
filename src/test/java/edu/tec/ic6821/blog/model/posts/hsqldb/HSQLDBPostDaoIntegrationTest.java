@@ -1,19 +1,21 @@
-package edu.tec.ic6821.blog.model.posts.hsqldb;
+package edu.tec.ic6821.blog.posts.model.hsqldb;
 
-import edu.tec.ic6821.blog.model.posts.Post;
-import edu.tec.ic6821.blog.model.posts.PostDao;
-import edu.tec.ic6821.blog.model.users.User;
-import edu.tec.ic6821.blog.model.users.UserDao;
+import edu.tec.ic6821.blog.posts.model.Post;
+import edu.tec.ic6821.blog.posts.model.PostDao;
+import edu.tec.ic6821.blog.users.model.User;
+import edu.tec.ic6821.blog.users.model.UserDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
 @SpringBootTest
 public class HSQLDBPostDaoIntegrationTest {
@@ -101,7 +103,16 @@ public class HSQLDBPostDaoIntegrationTest {
 
         // then
         assertThat(actual).isNotEmpty();
-        assertThat(actual.get()).isEqualTo(savedPost);
+        final Post retrievedPost = actual.get();
+        assertThat(retrievedPost.getId()).isEqualTo(savedPost.getId());
+        assertThat(retrievedPost.getIntegrationId()).isEqualTo(savedPost.getIntegrationId());
+        assertThat(retrievedPost.getUserIntegrationId()).isEqualTo(savedPost.getUserIntegrationId());
+        assertThat(retrievedPost.getUserId()).isEqualTo(savedPost.getUserId());
+        assertThat(retrievedPost.getTitle()).isEqualTo(savedPost.getTitle());
+        assertThat(retrievedPost.getBody()).isEqualTo(savedPost.getBody());
+        assertThat(retrievedPost.getExtId()).isEqualTo(savedPost.getExtId());
+        assertThat(retrievedPost.getCreatedOn()).isCloseTo(savedPost.getCreatedOn(), within(1, ChronoUnit.SECONDS));
+        assertThat(retrievedPost.getLastUpdatedOn()).isCloseTo(savedPost.getLastUpdatedOn(), within(1, ChronoUnit.SECONDS));
     }
 
     @Test
@@ -135,7 +146,16 @@ public class HSQLDBPostDaoIntegrationTest {
 
         // then
         assertThat(actual).isNotEmpty();
-        assertThat(actual.get()).isEqualTo(savedPost);
+        final Post retrievedPost = actual.get();
+        assertThat(retrievedPost.getId()).isEqualTo(savedPost.getId());
+        assertThat(retrievedPost.getIntegrationId()).isEqualTo(savedPost.getIntegrationId());
+        assertThat(retrievedPost.getUserIntegrationId()).isEqualTo(savedPost.getUserIntegrationId());
+        assertThat(retrievedPost.getUserId()).isEqualTo(savedPost.getUserId());
+        assertThat(retrievedPost.getTitle()).isEqualTo(savedPost.getTitle());
+        assertThat(retrievedPost.getBody()).isEqualTo(savedPost.getBody());
+        assertThat(retrievedPost.getExtId()).isEqualTo(savedPost.getExtId());
+        assertThat(retrievedPost.getCreatedOn()).isCloseTo(savedPost.getCreatedOn(), within(1, ChronoUnit.SECONDS));
+        assertThat(retrievedPost.getLastUpdatedOn()).isCloseTo(savedPost.getLastUpdatedOn(), within(1, ChronoUnit.SECONDS));
     }
 
     @Test
